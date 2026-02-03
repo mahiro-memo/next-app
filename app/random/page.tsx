@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 
 function assignRandomNumbers(n: number): number[] {
   const arr = Array.from({ length: n }, (_, i) => i + 1);
@@ -39,6 +40,7 @@ export default function RandomAssign() {
       <div style={{ marginTop: 16 }}>
         {result.length > 0 && <p>結果: {result.join(", ")}</p>}
       </div>
+      <Link href="/random">乱数作成アプリへ</Link>
     </div>
   );
 }
