@@ -40,7 +40,7 @@ export default function RandomAssign() {
       <div style={{ marginTop: 16 }}>
         {result.length > 0 && <p>結果: {result.join(", ")}</p>}
       </div>
-      <Link href="/random">乱数作成アプリへ</Link>
+      <Link href="/app">topへ</Link>
     </div>
   );
 }
