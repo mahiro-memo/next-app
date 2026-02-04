@@ -27,10 +27,9 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <header
+          className="header-nav"
           style={{
             padding: "10px 20px",
-            background: "#f0f0f0",
-            borderBottom: "1px solid #ccc",
           }}
         >
           <nav style={{ display: "flex", gap: "20px" }}>
