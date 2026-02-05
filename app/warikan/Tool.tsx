@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 
 interface ParticipantGroup {
   ratio: number; // 10, 20, ..., 100 (%)
@@ -14,7 +14,7 @@ interface CalculationResult {
 }
 
 export default function WarikanTool() {
-  const [totalAmount, setTotalAmount] = useState<string>('');
+  const [totalAmount, setTotalAmount] = useState<string>("");
   const [roundingUnit, setRoundingUnit] = useState<number>(100);
   const [groups, setGroups] = useState<ParticipantGroup[]>([
     { ratio: 100, count: 0 },
@@ -27,15 +27,15 @@ export default function WarikanTool() {
 
   // LocalStorageからデータを読み込み
   useEffect(() => {
-    const saved = localStorage.getItem('warikan-data');
+    const saved = localStorage.getItem("warikan-data");
     if (saved) {
       try {
         const data = JSON.parse(saved);
-        setTotalAmount(data.totalAmount || '');
+        setTotalAmount(data.totalAmount || "");
         setRoundingUnit(data.roundingUnit || 100);
         setGroups(data.groups || groups);
       } catch (e) {
-        console.error('Failed to load data:', e);
+        console.error("Failed to load data:", e);
       }
     }
   }, []);
@@ -43,7 +43,7 @@ export default function WarikanTool() {
   // データが変更されたらLocalStorageに保存
   useEffect(() => {
     const data = { totalAmount, roundingUnit, groups };
-    localStorage.setItem('warikan-data', JSON.stringify(data));
+    localStorage.setItem("warikan-data", JSON.stringify(data));
   }, [totalAmount, roundingUnit, groups]);
 
   const updateGroupCount = (index: number, count: string) => {
@@ -68,10 +68,11 @@ export default function WarikanTool() {
 
     // 各グループの支払額を計算（端数処理あり）
     return groups
-      .filter(group => group.count > 0)
-      .map(group => {
+      .filter((group) => group.count > 0)
+      .map((group) => {
         const rawAmount = basePrice * (group.ratio / 100);
-        const roundedAmount = Math.ceil(rawAmount / roundingUnit) * roundingUnit;
+        const roundedAmount =
+          Math.ceil(rawAmount / roundingUnit) * roundingUnit;
         return {
           ratio: group.ratio,
           count: group.count,
@@ -83,12 +84,12 @@ export default function WarikanTool() {
   const results = calculateResults();
   const totalAfterRounding = results.reduce(
     (sum, result) => sum + result.amountPerPerson * result.count,
-    0
+    0,
   );
 
   const handleReset = () => {
-    if (confirm('すべてのデータをリセットしますか？')) {
-      setTotalAmount('');
+    if (confirm("すべてのデータをリセットしますか？")) {
+      setTotalAmount("");
       setRoundingUnit(100);
       setGroups([
         { ratio: 100, count: 0 },
@@ -98,13 +99,15 @@ export default function WarikanTool() {
         { ratio: 60, count: 0 },
         { ratio: 50, count: 0 },
       ]);
-      localStorage.removeItem('warikan-data');
+      localStorage.removeItem("warikan-data");
     }
   };
 
   return (
     <div className="max-w-2xl mx-auto p-6 bg-white rounded-lg shadow-lg">
-      <h2 className="text-2xl font-bold mb-6 text-gray-800">割り勘計算ツール</h2>
+      {/*<h2 className="text-2xl font-bold mb-6 text-gray-800">
+        割り勘計算ツール
+      </h2>*/}
 
       {/* 合計金額入力 */}
       <div className="mb-6">
@@ -126,17 +129,17 @@ export default function WarikanTool() {
           端数切り上げ単位
         </label>
         <div className="flex gap-2 flex-wrap">
-          {[1, 10, 100, 1000].map((unit) => (
+          {[100, 500, 1000].map((unit) => (
             <button
               key={unit}
               onClick={() => setRoundingUnit(unit)}
               className={`px-4 py-2 rounded-md font-medium transition-colors ${
                 roundingUnit === unit
-                  ? 'bg-blue-500 text-white'
-                  : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                  ? "bg-blue-500 text-white"
+                  : "bg-gray-200 text-gray-700 hover:bg-gray-300"
               }`}
             >
-              {unit === 1 ? '1円' : `${unit}円`}
+              {unit === 1 ? "1" : `${unit}`}
             </button>
           ))}
         </div>
@@ -156,7 +159,7 @@ export default function WarikanTool() {
               <input
                 type="number"
                 min="0"
-                value={group.count || ''}
+                value={group.count || ""}
                 onChange={(e) => updateGroupCount(index, e.target.value)}
                 placeholder="0"
                 className="w-24 px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent"

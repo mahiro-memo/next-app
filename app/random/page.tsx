@@ -31,7 +31,9 @@ export default function RandomAssign() {
         type="number"
         min={1}
         value={count}
-        onChange={(e) => setCount(e.target.value === "" ? "" : Number(e.target.value))}
+        onChange={(e) =>
+          setCount(e.target.value === "" ? "" : Number(e.target.value))
+        }
         placeholder="人数を入力"
       />
       <button onClick={handleClick} style={{ marginLeft: 8 }}>
@@ -40,7 +42,6 @@ export default function RandomAssign() {
       <div style={{ marginTop: 16 }}>
         {result.length > 0 && <p>結果: {result.join(", ")}</p>}
       </div>
-      <Link href="/">topへ</Link>
     </div>
   );
 }

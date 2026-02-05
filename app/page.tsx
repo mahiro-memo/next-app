@@ -4,9 +4,12 @@ import Link from "next/link";
 export default function Home() {
   return (
     <main>
-      <h1>トップページ</h1>
-      <Link href="/random">乱数作成アプリへ</Link>
-      <Link href="/warikan">割り勘アプリへ</Link>
+      <p>
+        <Link href="/random">乱数作成アプリ</Link>
+      </p>
+      <p>
+        <Link href="/warikan">割り勘アプリ</Link>
+      </p>
     </main>
   );
 }

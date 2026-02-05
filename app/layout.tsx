@@ -24,7 +24,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="ja">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <header
           className="header-nav"
@@ -33,8 +33,7 @@ export default function RootLayout({
           }}
         >
           <nav style={{ display: "flex", gap: "20px" }}>
-            <Link href="/">トップ</Link>
-            <Link href="/random">乱数作成</Link>
+            <Link href="/">Mahiro App</Link>
           </nav>
         </header>
 
