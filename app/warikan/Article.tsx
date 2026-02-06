@@ -122,7 +122,7 @@ const articleContent = `
 export default function Article() {
   return (
     <article className="bg-[#2d2d2d] rounded-lg shadow-2xl p-6 md:p-10 border border-gray-700 mt-8">
-      <div className="prose prose-lg max-w-none">
+      <div className="prose prose prose-invert max-w-none">
         <ReactMarkdown>{articleContent}</ReactMarkdown>
       </div>
     </article>

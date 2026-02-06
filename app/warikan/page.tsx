@@ -3,7 +3,7 @@ import Tool from "./Tool";
 import Article from "./Article";
 
 export const metadata: Metadata = {
-  title: "割り勘アプリ - 負担割合別の割り勘計算ツール",
+  title: "適当割り勘くん",
   description:
     "負担割合が異なる人がいる場合の割り勘を簡単に計算。子連れの食事会や学生との飲み会に最適。",
 };
@@ -14,13 +14,10 @@ export default function WarikanPage() {
       <div className="max-w-3xl mx-auto">
         <header className="mb-8">
           <h1 className="text-3xl md:text-4xl font-bold text-white mb-2 text-center">
-            割り勘アプリ
+            適当割り勘くん
           </h1>
-          <p className="text-gray-400 text-center text-sm">
+          <p className="text-gray-300 text-center text-sm">
             負担割合別の割り勘計算ツール
-          </p>
-          <p className="text-gray-500 text-center text-xs mt-2">
-            Ctrl+R でリセット | Enter で次の入力欄へ
           </p>
         </header>
 

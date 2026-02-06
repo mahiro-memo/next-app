@@ -8,40 +8,47 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      typography: {
+      typography: (theme: any) => ({
         DEFAULT: {
           css: {
             maxWidth: "none",
-            color: "#e5e5e5",
+            color: theme("colors.gray.300"),
             a: {
-              color: "#60a5fa",
+              color: theme("colors.blue.400"),
               "&:hover": {
-                color: "#93c5fd",
+                color: theme("colors.blue.300"),
               },
+              textDecoration: "none",
             },
             h1: {
-              color: "#ffffff",
+              color: theme("colors.white"),
+              fontWeight: "800",
             },
             h2: {
-              color: "#ffffff",
+              color: theme("colors.white"),
+              fontWeight: "700",
             },
             h3: {
-              color: "#ffffff",
+              color: theme("colors.white"),
+              fontWeight: "600",
             },
             h4: {
-              color: "#ffffff",
+              color: theme("colors.white"),
+              fontWeight: "600",
             },
             strong: {
-              color: "#ffffff",
+              color: theme("colors.white"),
+              fontWeight: "600",
             },
             code: {
-              color: "#fbbf24",
-              backgroundColor: "#1a1a1a",
-              borderRadius: "0.25rem",
-              paddingLeft: "0.375rem",
-              paddingRight: "0.375rem",
-              paddingTop: "0.125rem",
-              paddingBottom: "0.125rem",
+              color: theme("colors.amber.400"),
+              backgroundColor: theme("colors.gray.900"),
+              borderRadius: theme("borderRadius.DEFAULT"),
+              paddingLeft: theme("spacing.1"),
+              paddingRight: theme("spacing.1"),
+              paddingTop: theme("spacing.0.5"),
+              paddingBottom: theme("spacing.0.5"),
+              fontWeight: "500",
             },
             "code::before": {
               content: '""',
@@ -50,33 +57,46 @@ const config: Config = {
               content: '""',
             },
             pre: {
-              backgroundColor: "#1a1a1a",
-              color: "#e5e5e5",
+              backgroundColor: theme("colors.gray.900"),
+              color: theme("colors.gray.300"),
               borderWidth: "1px",
-              borderColor: "#374151",
+              borderColor: theme("colors.gray.700"),
+              borderRadius: theme("borderRadius.lg"),
+            },
+            "pre code": {
+              backgroundColor: "transparent",
+              color: "inherit",
+              padding: "0",
             },
             blockquote: {
-              color: "#9ca3af",
-              borderLeftColor: "#4b5563",
+              color: theme("colors.gray.400"),
+              borderLeftColor: theme("colors.gray.600"),
+              fontStyle: "italic",
             },
             hr: {
-              borderColor: "#374151",
+              borderColor: theme("colors.gray.700"),
             },
             "ul > li::marker": {
-              color: "#9ca3af",
+              color: theme("colors.gray.500"),
             },
             "ol > li::marker": {
-              color: "#9ca3af",
+              color: theme("colors.gray.500"),
             },
             thead: {
-              borderBottomColor: "#4b5563",
+              borderBottomColor: theme("colors.gray.600"),
+            },
+            "thead th": {
+              color: theme("colors.white"),
             },
             "tbody tr": {
-              borderBottomColor: "#374151",
+              borderBottomColor: theme("colors.gray.700"),
+            },
+            "tbody td": {
+              color: theme("colors.gray.300"),
             },
           },
         },
-      },
+      }),
     },
   },
   plugins: [require("@tailwindcss/typography")],
