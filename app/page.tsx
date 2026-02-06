@@ -29,7 +29,7 @@ export default function Home() {
             href="/warikan"
             className="block p-6 border border-gray-200 dark:border-gray-700 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"
           >
-            <h3 className="text-lg font-semibold mb-2">割り勘アプリ</h3>
+            <h3 className="text-lg font-semibold mb-2">適当割り勘くん</h3>
             <p className="text-sm text-gray-600 dark:text-gray-400">
               飲み会やイベントの会計をざっくり分配。端数処理も自動で行います。
             </p>
