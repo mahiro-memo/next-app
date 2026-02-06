@@ -1,62 +1,39 @@
 import type { Metadata } from "next";
-import WarikanTool from "./Tool";
-import WarikanArticle from "./Article";
+import Tool from "./Tool";
+import Article from "./Article";
 
 export const metadata: Metadata = {
-  title: "適当割り勘くん",
+  title: "割り勘アプリ - 負担割合別の割り勘計算ツール",
   description:
-    "飲み会や食事会で負担割合が異なる場合の割り勘計算を簡単に。10割、8割、5割など柔軟に設定可能。端数処理にも対応した使いやすいツールです。",
-  keywords: "割り勘,計算,ツール,飲み会,学生割引,負担割合,端数処理",
-  openGraph: {
-    title: "適当割り勘くん",
-    description: "負担割合が異なる割り勘を簡単計算。学生や新人にも対応。",
-    type: "website",
-  },
+    "負担割合が異なる人がいる場合の割り勘を簡単に計算。子連れの食事会や学生との飲み会に最適。",
 };
 
 export default function WarikanPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
-      {/* ヘッダー */}
-      <header className="bg-white shadow-sm">
-        <div className="max-w-7xl mx-auto px-4 py-6">
-          <h1 className="text-3xl font-bold text-gray-900">適当割り勘くん</h1>
-          <p className="mt-2 text-gray-600">
-            負担割合が柔軟に対応可能な割り勘計算
+    <main className="min-h-screen p-4 md:p-8 bg-[#1a1a1a]">
+      <div className="max-w-3xl mx-auto">
+        <header className="mb-8">
+          <h1 className="text-3xl md:text-4xl font-bold text-white mb-2 text-center">
+            割り勘アプリ
+          </h1>
+          <p className="text-gray-400 text-center text-sm">
+            負担割合別の割り勘計算ツール
           </p>
-        </div>
-      </header>
-
-      {/* メインコンテンツ */}
-      <main className="max-w-7xl mx-auto px-4 py-8">
-        {/* ツールセクション */}
-        <section className="mb-16">
-          <WarikanTool />
-        </section>
-
-        {/* 広告スペース（プレースホルダー） */}
-        <section className="mb-16">
-          <div className="max-w-3xl mx-auto">
-            <div className="bg-gray-100 border-2 border-dashed border-gray-300 rounded-lg p-8 text-center">
-              <p className="text-gray-500">未定</p>
-            </div>
-          </div>
-        </section>
-
-        {/* 記事セクション */}
-        <section>
-          <WarikanArticle />
-        </section>
-      </main>
-
-      {/* フッター */}
-      <footer className="bg-gray-800 text-white mt-16">
-        <div className="max-w-7xl mx-auto px-4 py-8 text-center">
-          <p className="text-sm text-gray-400">
-            © 2026 負担割合別割り勘計算ツール. All rights reserved.
+          <p className="text-gray-500 text-center text-xs mt-2">
+            Ctrl+R でリセット | Enter で次の入力欄へ
           </p>
-        </div>
-      </footer>
-    </div>
+        </header>
+
+        {/* 割り勘ツール */}
+        <Tool />
+
+        {/* 解説記事 */}
+        <Article />
+
+        <footer className="mt-8 text-center text-gray-500 text-xs">
+          <p>© 2026 割り勘アプリ</p>
+        </footer>
+      </div>
+    </main>
   );
 }
