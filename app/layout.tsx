@@ -35,6 +35,7 @@ export default function RootLayout({
             <div className="flex gap-4 text-sm">
               <Link href="/random">乱数作成</Link>
               <Link href="/warikan">割り勘</Link>
+              <Link href="/tennis">テニス乱数表</Link>
               <Link href="/about">運営者情報</Link>
             </div>
           </nav>

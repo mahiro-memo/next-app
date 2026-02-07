@@ -34,6 +34,15 @@ export default function Home() {
               飲み会やイベントの会計をざっくり分配。端数処理も自動で行います。
             </p>
           </Link>
+          <Link
+            href="/tennis"
+            className="block p-6 border border-gray-200 dark:border-gray-700 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"
+          >
+            <h3 className="text-lg font-semibold mb-2">テニス乱数表</h3>
+            <p className="text-sm text-gray-600 dark:text-gray-400">
+              テニスの試合組み合わせを自動生成。ペナルティスコアで最適な組み合わせを選びます。
+            </p>
+          </Link>
         </div>
       </section>
 
