@@ -10,8 +10,6 @@
 - **React**: v19
 - **Markdown**: react-markdown
 
-
-
 ## ディレクトリ構成
 ```
 app/
