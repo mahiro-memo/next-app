@@ -186,7 +186,7 @@ export default function Article() {
 - 記事: `prose prose-sm prose-invert max-w-none`
 
 ## Article.tsx 記事ルール（AdSense対策）
-- 1000文字以上のオリジナルコンテンツ
+- 3000文字以上のオリジナルコンテンツ
 - 見出しタグの正しい階層（h1 > h2 > h3）
 - 具体的な使用例を3つ以上
 - アルゴリズムや計算方法の解説セクション
